@@ -1,4 +1,4 @@
-# Projeto: Contador de Pessoas com ESP32 e Sensores Ultrassônicos
+# Contador de Pessoas com ESP32 e Sensores Ultrassônicos
 
 [Link do projeto no WOKWI](https://wokwi.com/projects/407437023017695233)
 
