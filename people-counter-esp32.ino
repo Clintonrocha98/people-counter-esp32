@@ -55,7 +55,7 @@ void loop() {
   DisparaPulsoUltrassonico(TRIG_one);
   TimeEcho_one = pulseIn(ECHO_one, HIGH);
 
-  delay(100);
+  delayMicroseconds(50);
 
   DisparaPulsoUltrassonico(TRIG_two);
   TimeEcho_two = pulseIn(ECHO_two, HIGH);
@@ -81,7 +81,5 @@ void loop() {
     Serial.print("Numero de pessoas na sala: ");
     Serial.println(Pessoas);
     piscaLed(ledRedPin);
-  }
-
-  delay(1000);
-  }
+  }  
+}
