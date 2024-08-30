@@ -1,8 +1,6 @@
-# Contador de Pessoas com ESP32 e Sensores Ultrassônicos
+# Contador de pessoas com ESP32 e sensores ultrassônicos
 
 [Link do projeto no WOKWI](https://wokwi.com/projects/407437023017695233)
-
-Este projeto utiliza um microcontrolador ESP32 junto com dois sensores ultrassônicos para monitorar e contar o número de pessoas que entram e saem de um ambiente. Quando uma pessoa entra, um LED verde pisca; quando uma pessoa sai, um LED vermelho pisca. O projeto também envia uma notificação para um endpoint HTTP sempre que uma pessoa entra ou sai, facilitando a integração com sistemas externos para monitoramento e controle de acesso.
 
 ## Funcionalidade
 
@@ -36,7 +34,7 @@ const char* ssid = "NOME_DA_REDE";
 const char* password = "SENHA_DA_REDE";
 ```
 
-## Configuração do Endpoint
+## Configuração do endpoint
 
 Atualize a URL do endpoint HTTP no código conforme necessário:
 
@@ -46,14 +44,14 @@ const char* URL = "http://URL-FODA/notifica";
 
 Certifique-se de que o servidor esteja configurado para receber as requisições HTTP POST enviadas pelo ESP32.
 
-## Componentes Utilizados
+## Componentes utilizados
 
 - ESP32: Microcontrolador para controlar os sensores, LEDs, e fazer requisições HTTP.
 -  2 Sensores Ultrassônicos (HC-SR04 ou similar): Para detectar a presença de pessoas.
 - LEDs (Vermelho e Verde): Para indicar visualmente entradas e saídas.
 - Protoboard e Jumpers: Para conexão dos componentes.
 
-## Esquema de Conexão
+## Esquema de conexão
 
 - TRIG_one do sensor ultrassônico 1 conectado ao pino GPIO 26 do ESP32.
 - ECHO_one do sensor ultrassônico 1 conectado ao pino GPIO 27 do ESP32.
