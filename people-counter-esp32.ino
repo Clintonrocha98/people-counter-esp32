@@ -1,10 +1,10 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-const char* ssid = "NOME_DA_REDE";
-const char* password = "SENHA_DA_REDE";
+const char* ssid = "";
+const char* password = "";
 
-const char* URL = "http://URL-FODA/notifica"
+const char* URL = "";
 
 const int ledRedPin = 23; 
 const int ledGreenPin = 12;
@@ -34,13 +34,13 @@ void ledFlashing(int led){
     digitalWrite(led,LOW);
 }
 
-void requestApi(int number ) {
+void requestApi(String path) {
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
-    http.begin(URL);
+    http.begin(URL + path);
     http.addHeader("Content-Type", "application/json");
   
-    int httpResponseCode = http.POST("{numberOfPeople: "+String(number)+"}");
+    int httpResponseCode = http.GET();
 
     String response = http.getString();
     Serial.println(httpResponseCode);
@@ -87,14 +87,14 @@ void loop() {
   if(TimeEcho_one < TimeEcho_two){
     numberOfPeople++;
 
-    requestApi(numberOfPeople);
+    requestApi("/increment");
 
     ledFlashing(ledGreenPin);
   } 
   if(TimeEcho_one > TimeEcho_two){
     numberOfPeople--;
     
-    requestApi(numberOfPeople);
+    requestApi("/decrement");
 
     ledFlashing(ledRedPin);
   }  
